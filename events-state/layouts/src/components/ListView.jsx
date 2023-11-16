@@ -1,9 +1,12 @@
 import React from 'react'
+import ShopItem from './ShopItem'
 
-export default function ListView({cards}) {
+export default function ListView({ items }) {
   return (
-    <div>
-        
-    </div>
+      <ul className='list-view'>
+        {items.map((item) => (
+          <ShopItem item={item} />
+        ))}
+      </ul>
   )
 }

@@ -1,21 +1,37 @@
 import React from 'react'
 import { useState } from 'react'
+import IconSwitch from './IconSwitch';
+import CardsView from './CardsView'
+import ListView from './ListView'
+
 
 export default function Store() {
   const initialState = {
-    icon: ["view_list", "view_module"],
-    selected: "view_list"
+    icon: "view_module",
+    listView: true
   };
 
   const [state, setState] = useState(initialState);
 
-  switchCardsViewHandler = () => {
-    
+  const switchViewHandler = () => {
+    if (state.listView) {
+      setState({
+        icon: "view_list",
+        listView: false
+      })
+    } else {
+      setState({
+        icon: "view_module",
+        listView: true
+      })
+
+    }
   }
 
   return (
     <div>
-      <IconSwitch icon={"view_list"} onSwitch={() => console.log("change state here")} />
+      <IconSwitch icon={state.icon} onSwitch={switchViewHandler} />
+      {state.listView ? <ListView items={products} /> : <CardsView cards={products} />}
     </div>
   )
 }
@@ -50,4 +66,4 @@ const products = [{
   price: "150",
   color: "green",
   img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
-}];
+}]
