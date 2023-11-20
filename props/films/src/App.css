@@ -1,0 +1,8 @@
+.card-body-stars {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
