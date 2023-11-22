@@ -1,0 +1,12 @@
+.converter-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.color__input {
+  text-align: center;
+  font-size: 25px;
+}
