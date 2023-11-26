@@ -1,0 +1,12 @@
+.news-container {
+  margin-bottom: 30px;
+}
+
+.news__titles {
+  display: flex;
+  gap: 20px;
+}
+
+.news__title_active {
+  font-weight: 700;
+}
